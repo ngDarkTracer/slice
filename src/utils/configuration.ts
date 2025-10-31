@@ -1,4 +1,4 @@
-interface ProjectItem {
+interface ProjectItemStruct {
     image: string
     title: string
     description: string
@@ -10,4 +10,10 @@ interface NavigationItem {
     url: string
 }
 
-export { projectItem, NavigationItem }
+interface FormValues {
+    name: string
+    email: string
+    message: string
+}
+
+export { ProjectItemStruct, NavigationItem, FormValues }

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-const skills = ['HTML', 'CSS', 'SCSS', 'TAILWIND', 'JAVASCRIPT', 'TYPESCRIPT', 'REACT', 'VUE', 'ANGULAR', 'NUXT', 'NEXT', 'SALESFORCE', 'JAVA', 'C#', 'SPRING', 'UNITY', 'GIT', 'GITHUB', 'BLENDER']
+const skills = ['HTML', 'CSS', 'SCSS', 'TAILWIND', 'JAVASCRIPT', 'TYPESCRIPT', 'REACT', 'VUE', 'ANGULAR', 'NUXT', 'NEXT', 'SALESFORCE', 'JAVA', 'C#', 'SPRING', 'UNITY', 'GIT', 'GITHUB', 'BLENDER', 'SUBSTANCE PAINTER']
 </script>
 
 <template>
@@ -14,7 +14,7 @@ const skills = ['HTML', 'CSS', 'SCSS', 'TAILWIND', 'JAVASCRIPT', 'TYPESCRIPT', '
       <p>I also like sharing content related to the stuff that I have learned over the years in <b>Web Development</b> so it can help other people of the Dev Community. Feel free to Connect or Follow me on my
         <a href="" target="_blank" class="underline font-bold text-[#7743e8]">Linkedin</a> and <a href="" target="_blank" class="underline font-bold text-[#7743e8]">Instagram</a> where I post useful content related to Web Development and Programming</p>
       <p>I'm open to <b>Job</b> opportunities where I can contribute, learn and grow. If you have a good opportunity that matches my skills and experience then don't hesitate to <b>contact</b> me.</p>
-      <button class="bg-[#7743e8] mt-[50px] px-[50px] py-4 shadow-lg text-white font-bold rounded-sm">CONTACT</button>
+      <button class="bg-[#7743e8] mt-[50px] px-[50px] py-4 shadow-lg text-white font-bold rounded-sm hover:cursor-pointer">CONTACT</button>
     </div>
     <div>
       <p class="font-bold text-2xl mb-8">My Skills</p>

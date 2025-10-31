@@ -2,7 +2,7 @@
 import {NavigationItem} from "@/utils/configuration";
 
 
-const navItems: NavigationItem = [
+const navItems: NavigationItem[] = [
   { label: 'HOME', url: '' },
   { label: 'ABOUT', url: '' },
   { label: 'PROJECTS', url: '' },

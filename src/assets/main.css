@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+:root {
+    --my-delay: 50s;
+    --number-of-projects: 1
+}

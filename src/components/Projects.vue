@@ -1,59 +1,85 @@
 <script setup lang="ts">
+import { ref } from "vue";
 import ProjectItem from "@/components/ProjectItem.vue";
-import ProjectItems from "@/components/ProjectItem.vue";
+import {ProjectItemStruct} from "@/utils/configuration";
 
-const items: ProjectItem = [
+const delay = ref<Number>(30)
+const items: ProjectItemStruct[] = [
   {
-    image: '',
+    image: 'src/assets/airbooks-logo.png',
     title: 'AirBooks v2.0',
-    description: 'Description of my folio',
+    description: 'A solid STI to scale up your business',
     buttonLabel: 'CASE STUDY'
   },{
-    image: '',
+    image: 'src/assets/airbooks-logo.png',
     title: 'AirBooks Integrations',
-    description: 'Description of my folio',
+    description: 'Airbooks integrations provided to bring it to another level',
     buttonLabel: 'CASE STUDY'
   },{
-    image: '',
+    image: 'src/assets/totalenergies.svg',
     title: 'TotalEnergies',
-    description: 'Description of my folio',
+    description: 'Salesforce app used by TotalEnergies to sell charges card',
     buttonLabel: 'CASE STUDY'
   },{
-    image: '',
+    image: 'src/assets/salesforce.svg',
     title: 'Enfant du Mekong',
-    description: 'Description of my folio',
+    description: 'Heal the world',
     buttonLabel: 'CASE STUDY'
   },{
-    image: '',
+    image: 'src/assets/salesforce.svg',
     title: 'Microport',
-    description: 'Description of my folio',
+    description: 'Projet made to export and save Microport data',
     buttonLabel: 'CASE STUDY'
   },{
-    image: '',
+    image: 'src/assets/rmc-info.svg',
     title: 'RMC/BFM',
-    description: 'Description of my folio',
+    description: 'Setup a sales helper plateform for RMC',
+    buttonLabel: 'CASE STUDY'
+  },{
+    image: 'src/assets/logo-blender.svg',
+    title: 'Blender artist',
+    description: 'Create animation movies and videos games',
     buttonLabel: 'CASE STUDY'
   }
 ]
+
 </script>
 
 <template>
 <div class="bg-gray-50 grid grid-rows-[8vh_15vh_76vh] p-[100px]">
   <p class="text-[35px] font-bold text-center after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:w-12 after:h-1 after:rounded-md after:bg-purple-500 after:mt-[70px]">PROJECTS</p>
   <p class="text-center text-lg mt-10">Here you will find some of the personal and clients projects that I created with each project containing its own case study</p>
-  <div class="flex flex-row flex-wrap justify-center items-center gap-[10em] mt-5">
-    <project-items v-for="{ image, title, description, buttonLabel } in items">
-      <template #image></template>
-      <template #title>{{ title }}</template>
-      <template #description>{{ description }}</template>
-      <template #launch>
-        <button>{{ buttonLabel }}</button>
-      </template>
-    </project-items>
+  <div class="flex flex-row flex-nowrap justify-center items-center w-[100%] absolute slide mt-[25em]">
+    <div v-for="({ image, title, description, buttonLabel }, i) in items" class="absolute size-[20em]" :style="`--i:${i}; --my-delay:${delay}s; --number-of-projects:${items.length}`">
+      <project-item>
+        <template #image>
+          <img :src="image" :alt="title">
+        </template>
+        <template #title>{{ title }}</template>
+        <template #description>{{ description }}</template>
+<!--        <template #launch>-->
+<!--          <button>{{ buttonLabel }}</button>-->
+<!--        </template>-->
+      </project-item>
+    </div>
   </div>
 </div>
 </template>
 
 <style scoped>
+
+@keyframes slideAnimation {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.slide > * {
+  animation: slideAnimation var(--my-delay, 20s) linear infinite;
+  animation-delay: calc(var(--i) * (var(--my-delay, 20s) / var(--number-of-projects, 1)));
+}
 
 </style>
