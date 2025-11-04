@@ -8,7 +8,7 @@ const items: ProjectItemStruct[] = [
   {
     image: 'src/assets/airbooks-logo.png',
     title: 'AirBooks v2.0',
-    description: 'A solid STI to scale up your business',
+    description: 'A solid CIS to scale up your business',
     buttonLabel: 'CASE STUDY'
   },{
     image: 'src/assets/airbooks-logo.png',
@@ -23,7 +23,7 @@ const items: ProjectItemStruct[] = [
   },{
     image: 'src/assets/salesforce.svg',
     title: 'Enfant du Mekong',
-    description: 'Heal the world',
+    description: 'Heal the world with salesforce',
     buttonLabel: 'CASE STUDY'
   },{
     image: 'src/assets/salesforce.svg',
@@ -33,12 +33,17 @@ const items: ProjectItemStruct[] = [
   },{
     image: 'src/assets/rmc-info.svg',
     title: 'RMC/BFM',
-    description: 'Setup a sales helper plateform for RMC',
+    description: 'Salesforce app built for RMC',
     buttonLabel: 'CASE STUDY'
   },{
     image: 'src/assets/logo-blender.svg',
     title: 'Blender artist',
-    description: 'Create animation movies and videos games',
+    description: 'Create 3D models and animation',
+    buttonLabel: 'CASE STUDY'
+  },{
+    image: 'src/assets/Unity.svg',
+    title: 'Unity developer',
+    description: 'Make some fun videos games',
     buttonLabel: 'CASE STUDY'
   }
 ]

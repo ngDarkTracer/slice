@@ -5,14 +5,22 @@ import Projects from "@/components/Projects.vue";
 import Contact from "@/components/Contact.vue";
 import Hero from "@/components/Hero.vue";
 import Footer from "@/components/Footer.vue";
+
+function jump(anchor: string) {
+  const fakeLink = document.createElement('a')
+  fakeLink.href = `${anchor}`
+  document.body.appendChild(fakeLink)
+  fakeLink.click()
+  document.body.removeChild(fakeLink)
+}
 </script>
 
 <template>
 <div>
-  <Navigation/>
+  <Navigation @goto="value => jump(value)"/>
   <main>
-    <Hero id="hero"/>
-    <About id="about"/>
+    <Hero id="hero" @goto="value => jump(value)"/>
+    <About id="about" @goto="value => jump(value)"/>
     <Projects id="projects"/>
     <Contact id="contact"/>
   </main>

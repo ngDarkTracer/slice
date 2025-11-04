@@ -1,6 +1,11 @@
 @import "tailwindcss";
 
 :root {
+    --i: 0;
     --my-delay: 50s;
     --number-of-projects: 1
+}
+
+html {
+    scroll-behavior: smooth;
 }

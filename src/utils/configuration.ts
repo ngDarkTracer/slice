@@ -16,4 +16,8 @@ interface FormValues {
     message: string
 }
 
-export { ProjectItemStruct, NavigationItem, FormValues }
+interface Emits {
+    (event: 'goto', value: string): void
+}
+
+export { ProjectItemStruct, NavigationItem, FormValues, Emits }
