@@ -1,31 +1,28 @@
-version: "1.0"
+#services:
+#  frontend:
+#    build: .
+#    ports:
+#      - "5173:5173"
+#    restart: unless-stopped
+
 services:
-  vue-dev:
+  vue-slice:
+    image: node:20-alpine
+    working_dir: /app
+    volumes:
+      - ./:/app:delegated
+      - /app/node_modules
+    ports:
+      - "5173:5173" # change selon ton dev server (vite par défaut 5173, vue-cli 8080)
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    command: sh -c "npm ci --silent || npm install --silent && npm run dev -- --host 0.0.0.0"
+
+  vue-prod:
     build:
       context: .
+      target: build # optionnel (on build tout le Dockerfile)
+    image: my-vue-app:latest
     ports:
-        - "5173:5173"
-
-#version: "1.0"
-#services:
-#  vue-dev:
-#    image: node:20-alpine
-#    working_dir: /app
-#    volumes:
-#      - ./:/app:delegated
-#      - /app/node_modules
-#    ports:
-#      - "5173:5173" # change selon ton dev server (vite par défaut 5173, vue-cli 8080)
-#    command: sh -c "npm install --silent && npm run dev"
-#    environment:
-#      - CHOKIDAR_USEPOLLING=true
-    # activez ce service en dev: docker compose up vue-dev
-#
-#  vue-prod:
-#    build:
-#      context: .
-#      target: build # optionnel (on build tout le Dockerfile)
-#    image: my-vue-app:latest
-#    ports:
-#      - "80:80"
-#    # pour lancer en prod: docker compose up --build vue-prod
+      - "5173:5173"
+    # pour lancer en prod: docker compose up --build vue-prod
